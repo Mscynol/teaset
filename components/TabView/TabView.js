@@ -4,7 +4,8 @@
 
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {StyleSheet, View, ViewPropTypes} from 'react-native';
+import {StyleSheet, View} from 'react-native';
+import { ViewPropTypes } from 'deprecated-react-native-prop-types';
 
 import Theme from 'teaset/themes/Theme';
 import TabSheet from './TabSheet';
@@ -118,7 +119,7 @@ export default class TabView extends Component {
                 onPress={e => {
                   if (type === 'sheet') {
                     this.setState({activeIndex: sheetIndex}, () => {
-                      this.refs.carousel && this.refs.carousel.scrollToPage(sheetIndex);                  
+                      this.refs.carousel && this.refs.carousel.scrollToPage(sheetIndex);
                       onChange && onChange(sheetIndex);
                     });
                   }

@@ -4,7 +4,8 @@
 
 import React, {Component} from "react";
 import PropTypes from 'prop-types';
-import {StyleSheet, View, Text, Animated, PanResponder, ViewPropTypes} from 'react-native';
+import {StyleSheet, View, Text, Animated, PanResponder} from 'react-native';
+import { ViewPropTypes } from 'deprecated-react-native-prop-types';
 
 import Theme from 'teaset/themes/Theme';
 import WheelItem from './WheelItem';
@@ -61,7 +62,7 @@ export default class Wheel extends Component {
   componentDidUpdate(prevProps) {
     if (this.props.index || this.props.index === 0) {
       this.currentPosition.setValue(this.props.index * this.holeHeight);
-    }    
+    }
   }
 
   createPanResponder() {
